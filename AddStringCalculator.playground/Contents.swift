@@ -12,6 +12,10 @@ func addString(str: String) throws -> Int {
     
     //to get the delimiter if it exists
     
+    if str.isEmpty {
+        return 0
+    }
+    
     var delimiter = String(str.prefix(2))
     
     var answer = 0
@@ -76,7 +80,6 @@ do {
 
 
 
-
     str = "4,5,4,1010"
 
     answer = try addString(str: str) //13
@@ -98,6 +101,15 @@ do {
      str =   "//$,@,*\n1$2@3*3"
     
      answer = try addString(str: str) //11
+    
+    str =   ""
+    
+    answer = try addString(str: str) //0
+    
+    
+    str = "4,5,4,-1010"
+    
+    answer = try addString(str: str) //13
     
     str =   "//$\n1$2$-1003"
     
