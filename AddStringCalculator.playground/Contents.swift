@@ -56,7 +56,7 @@ func addString(str: String) throws -> Int {
         var negativeArray =  finalIntArray.filter { $0 < 0}
 
 
-        if negativeArray.count != 0 {
+        if !negativeArray.isEmpty {
 
             throw AddStringError.Negatives
 
